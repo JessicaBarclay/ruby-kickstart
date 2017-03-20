@@ -4,10 +4,23 @@
 # and if you own more than 20 books, you will get a "B".
 # He further hypothesizes that if you actually read your books, then you will
 # get a full letter grade higher in every case.
-#
 # grade(4,  false)  # => "D"
 # grade(4,  true)   # => "C"
 # grade(15, true)   # => "B"
 
+
 def grade(num_books, reads_books)
+	if num_books < 10 && !reads_books ; "D" # if num_books is less than 10 and read_books is false, then "D"
+	elsif num_books < 10 && reads_books ; "C"
+	elsif (10..20).include?(num_books) && !reads_books ; "C"
+	elsif (10..20).include?(num_books) && reads_books ; "B"
+	elsif num_books >= 20 && !reads_books ; "B"
+	elsif num_books >= 20 && reads_books ; "A"
+  end
 end
+
+
+
+
+
+
