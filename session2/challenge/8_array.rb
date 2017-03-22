@@ -5,3 +5,10 @@
 # got_three? ['a', 'a', 'b']  # => false
 # got_three? ['a', 'a', 'a']  # => true
 # got_three? [1, 2, 1, 1]     # => false
+
+
+
+def got_three?(array)
+  array.each_cons(3) { |x, y, z| ; return true if x ==y && y == z}
+  false
+end
