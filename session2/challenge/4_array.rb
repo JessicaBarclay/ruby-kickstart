@@ -10,5 +10,5 @@
 
 
 def get_squares(ary)
-	ary.select {|i| ary.include? i*i}.sort
+  ary.select {|i| ary.include? i*i}.sort
 end
