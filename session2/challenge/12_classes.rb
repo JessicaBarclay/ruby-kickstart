@@ -33,7 +33,7 @@ class Fraction
   end
 
   def to_s
-    "#{@numerator}/#denominator}"
+    "#{numerator}/#{denominator}"
   end
 
   def gcd(x, y)
