@@ -29,5 +29,13 @@
 # create it from scratch :)
 
 
-def pathify
+def pathify(path=Hash.new)
+  return path.map { |path| '/' + path } if path.is_a? Array
+  array = []
+  path.each do |parent, chil_dir|
+    parent = '/' + parent # structure e.g. /usr/bin/ruby ...
+    child_path = pathify chil_dir # run the child dir through this method
+    child_path.each { |child_path| array << (parent + child_path)} # use .each child_path to append both path strings to 'array'
+  end
+  array
 end
