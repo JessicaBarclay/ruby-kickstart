@@ -7,10 +7,8 @@
 # first_pos "The dog and the cat and the cow" # => {"The" => 0, "dog" => 1, "and" => 2, "the" => 3, "cat" => 4, "cow" => 7}
 
 
-def first_pos(string)
-	hash = {}
-	string.split.map.with_index do |key, index| # loop the split string using map with index. 
-		hash[key] ||= index # print the key or the index, which ever comes first
-	end
-	  hash
+def first_pos(s)
+  hash = {}
+  	s.split.map.with_index {|word, index| ; hash[word] ||= index}
+  hash
 end
