@@ -30,5 +30,7 @@
 # end
 
 
-def array_init
+def array_init(arg=5, &block) # pass in optional arg (default=5) and a block
+	block ||= Proc.new{|i| (100 * i).to_s} # if a block is passed in, use to initialize each index in the Array (pass it the current index)
+	Array.new(arg, &block)
 end
